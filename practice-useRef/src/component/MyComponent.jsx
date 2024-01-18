@@ -14,7 +14,7 @@ function MyComponent() {
 
     useEffect(()=> {
         console.log("Component Rendered");
-        console.log(inputRef);
+    
     });
 
     function handleClick1() {
@@ -22,6 +22,7 @@ function MyComponent() {
         // ref.current = ref.current+1;
         // console.log(ref.current);
         inputRef1.current.focus();
+        console.log(inputRef1)
         inputRef1.current.style.backgroundColor="yellow";
         inputRef2.current.style.backgroundColor="";
         inputRef3.current.style.backgroundColor="";
