@@ -1,5 +1,5 @@
 function Header() {
-
+    // Header component here we create a nav that we will pas to app jsx as a component
     return (
         <header>
             <h1>My website</h1>

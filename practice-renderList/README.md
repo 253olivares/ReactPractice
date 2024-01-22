@@ -1,8 +1,3 @@
-# React + Vite
+# React Render List Practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+In this module we create an array and then pass it into our components. Our component validates the array values to make sure they are the correct value types. Then it deconstructs our array to get our items into a separate variable. We use the map function to loop through our array to create li elements for each object before mounting it onto our component to return a react fragment with a list of the items within our array.

@@ -1,8 +1,5 @@
-# React + Vite
+# React OnChange Practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React has an in built on change event lister that allows the framework to listen for any changes in the value field for input elements such as selects, radios, textareas, and general input fields.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Framework runs any code provided for the onchange attribute allow us to keep track of changes in states and review user input as they use the page input fields allowing for responsive feedback.

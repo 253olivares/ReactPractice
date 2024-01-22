@@ -4,6 +4,8 @@ import Food from './Food.jsx'
 
 function App() {
 
+  // we import our components on the tops and put those components in our return
+
   return (
     <>
       <Header />
