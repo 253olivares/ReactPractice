@@ -1,8 +1,3 @@
-# React + Vite
+# ClockApp Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+For this module we create a clock using a time state that is set to the current Date object. useEffect is utilized to create start our interval function that is set to run every second. When it runs it grabs the new time using date object and sets it to our time state. This causes the component to rerender and run our time function that displays our time on the dom.

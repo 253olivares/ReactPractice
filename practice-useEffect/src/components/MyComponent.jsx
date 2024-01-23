@@ -1,4 +1,4 @@
-//useEffect() = React gook that tells react to DO SOME CODE WHEN (pick one):
+//useEffect() = React hook that tells react to DO SOME CODE WHEN (pick one):
 //              This component re-renders
 //              This component mounts
 //              This state of a value
@@ -35,20 +35,27 @@ function MyComponent() {
 
     //run count only when count updates (or anything in the array)
     useEffect(()=> {
+        // useEffect updates our document title whenever our component rerenders
         document.title = `Count:${count} ${color}`
         return ()=> {
+            // here we would run code that would stop an increment or delete previous values or components that are no longer needed
             //cleanup code
         }
     },[count]);
+    // here we are telling it to only run this useEffect when our component rerenders due to count. 
+    // if left blank it would update every rerender regardless of the state that triggers the changes
 
+    // add count function updates our count number
     function addCount() {
         setCount(prevState => prevState+ 1);
     }
-
+    // subtract count function updates our count by -1
     function subtractCount() {
         setCount(prevState => prevState- 1);
     }
-
+    // change color function turnery to change our p style when we flip the string. 
+    //  true = red
+    // false = green
     function changeColor() {
         setCount(prevState => prevState === "green" ? "red": "green");
     }

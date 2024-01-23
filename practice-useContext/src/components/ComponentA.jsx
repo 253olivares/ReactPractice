@@ -16,18 +16,22 @@
 
 
 import React, { useState,createContext } from "react";
+// react insert useState and create context to export the states into our react components
 import ComponentB from "./ComponentB";
-
+// userContext create a useContext
 export const UserContext = createContext();
 
 function ComponentA() {
-
+// component function
+    // Creates a user state
     const [user, setUser] = useState("Code");
 
     return(
         <div className="box">
             <h1>Component A</h1>
             <h2>{`Hello ${user}`}</h2>
+            {/* we rap our component with the userContext to let the framework know to allow access to this state to any 
+            child component within the tag */}
             <UserContext.Provider value={user}>
                 <ComponentB></ComponentB>
             </UserContext.Provider>

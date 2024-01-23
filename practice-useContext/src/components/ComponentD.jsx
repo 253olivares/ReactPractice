@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import { UserContext } from './ComponentA';
 
 function ComponentD() {
-
+// we can do this again in our D component as long as we call useContext
     const user = useContext(UserContext);
 
     return(

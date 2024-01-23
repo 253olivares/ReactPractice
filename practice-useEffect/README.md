@@ -1,8 +1,5 @@
-# React + Vite
+# React useEffect Hook Practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This module practices using the useEffect hook which is functions to create blocks of codes that are run whenever the framework detects changes in a state. This is different from on change as on change only changes to input changes from the user. Useeffect works around state changes in the life cycle.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+UseEffect can create large scale changes whenever our state changes. We can only set it to update when only specific state states change which I practice in my second useEffect module.

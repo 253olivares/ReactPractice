@@ -1,8 +1,5 @@
-# React + Vite
+# React useRef
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This modules covers useRef. This allows use to use inputs on our dom without triggering rerenders compared to setting states to inputs. This way we can fetch data from dom when needed.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Best use case are editing pages.

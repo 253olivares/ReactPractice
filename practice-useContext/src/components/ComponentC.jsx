@@ -3,7 +3,7 @@ import { UserContext } from './ComponentA';
 import ComponentD from "./ComponentD";
 
 function ComponentC() {
-
+    // we call our context and then use user down in our fragment
     const user = useContext(UserContext);
 
     return(

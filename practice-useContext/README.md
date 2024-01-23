@@ -1,8 +1,5 @@
-# React + Vite
+# React useContext
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Global state manager for react. This allows us to create react states and access them from where ever on our application as long as we include our state file. This gets rid of the need for prop drilling common in frameworks.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The required set is making a provider component and consumer component that identifies where are state resides and who is using our state.

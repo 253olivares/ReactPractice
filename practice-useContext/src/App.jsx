@@ -3,16 +3,16 @@
 //                without passing props through each level
 
 import ComponentA from './components/ComponentA'
-
+// component A
 import React from 'react'
 
 function App() {
 
 
   return (
-    <>
+    <React.Fragment>
       <ComponentA></ComponentA>
-    </>
+    </React.Fragment>
   )
 }
 

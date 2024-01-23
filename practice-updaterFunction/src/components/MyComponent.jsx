@@ -11,21 +11,21 @@ function MyComponent(){
         //NEXT state becomes the CURRENT state after an update
         setCount(count + 1);
 
-        //updater function
+        //updater function to add the value of 1 to our integer
         setCount (prevCount =>  prevCount +1);
     }
 
     function decrement() {
         setCount(count - 1);
 
-        //updater function
+        //updater function to remove the value of 1 from our integer
         setCount(prevCount=> prevCount -1);
     }
 
     function reset() {
         setCount(0);
 
-        //updater function
+        //updater function to set our count to 0
         setCount(prevCount => prevCount = 0);
     }
 

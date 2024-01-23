@@ -1,8 +1,4 @@
-# React + Vite
+# React useState Practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Module to practice the use of useStates which allows our app to keep like dynamic tracking of data and variables. Every time we set new states values the component rerenders to reflect new value changes.
+States are scoped variables so its possible to call multiple components with the same states and have them only update values within that component.
