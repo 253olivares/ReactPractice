@@ -1,0 +1,64 @@
+.userCard{
+    width: 800px;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.userProfileIcon {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userProfileIcon img{
+    width:150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.userInformation{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.userName{
+    margin-bottom: 20px;
+}
+
+.firstlastName{
+    display: flex;
+}
+.firstlastName p:first-child{
+    margin-right: 10px;
+}
+
+.userButton{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.userButton button{
+    width: 75%;
+    padding: 15px 0px 15px 0px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    background-color: lightblue;
+}
+.userButton button:hover{
+    cursor: pointer;
+}
+.userButton button:active{
+    filter: brightness(90%);
+}

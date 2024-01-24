@@ -1,0 +1,58 @@
+.box{
+    min-width: 300px;
+    min-height: 300px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: none;
+    padding: 0px 20px;
+}
+
+.counter{
+    width: 100%;
+    text-align: center;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter span{
+    font-size: 50px;
+    
+}
+.interface{
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+.interface button{
+    padding: 10px 15px 10px 15px;
+    font-size: 13px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: all .8s ease-in-out;
+}
+
+.interface button:hover{
+    cursor: pointer;
+    filter: brightness(90%);
+}
+
+.interface .addCount{
+    background-color: rgb(84, 211, 94);
+}
+
+.interface .minusCount{
+    background-color: rgb(211, 84, 84);
+}
+
+.interface .resetCount{
+    background-color: rgb(84, 141, 211);
+}
