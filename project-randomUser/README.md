@@ -1,8 +1,7 @@
-# React + Vite
+# React Random Use API Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Create a user card that gets feedback from an api using axios. We make an api request and get information about a random user that we then display on our card component.
 
-Currently, two official plugins are available:
+Small api project used as a interview coding practice.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Attempted to create without resorting yo resources as much.
