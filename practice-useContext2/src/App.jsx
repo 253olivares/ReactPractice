@@ -2,16 +2,17 @@ import React from "react"
 import { UserProvider , useUser}from "./UserContext";
 
 const LoggedInUser = () => {
-
+  // calls and deconstructs our user from the provider component with our state
   const {user} = useUser();
 
   return (
     <p>
+      {/* user component */}
       Hello <span className="Username">{user.name}</span>
     </p>
   );
 };
-
+// Header component that wraps our logged in user
 const Header = () => {
   
   return(
@@ -21,9 +22,9 @@ const Header = () => {
     </header>
   );
 };
-
+// page component that we are using to render our page component 
 const Page = () => {
-
+  // We call use user from our provider to let the component know to grab our user information
   const {user} = useUser();
 
   return(
@@ -38,7 +39,7 @@ const Page = () => {
 };
 
 
-
+// App component that collects our components
 function App() {
 
   return (
@@ -50,9 +51,11 @@ function App() {
     </React.Fragment>
   )
 }
-
+// New root components that for testing purposes was being used on this module to bc originally my components werent rendering
+// so for this project only root is what is being used and sent to render 
 function Root() {
-  return ( <UserProvider>
+  return ( 
+  <UserProvider>
     <App />
   </UserProvider>)
 }
