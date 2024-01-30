@@ -1,0 +1,3 @@
+# React High Order Component Render Props
+
+In this module we are practicing HOC through a different method of using Prop Rendering. The different between using prop rendering and our previous HOC method. In the previous module we cloned components to create a new component with our shared states and functions. Render Props method alternatively injects our props and states into our components. Both methods can be used to reach the same conclusion of creating dynamic components that share state and functions with the flexibility of changing specific values to reach for different data stores and data display.
