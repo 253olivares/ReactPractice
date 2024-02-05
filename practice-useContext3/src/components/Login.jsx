@@ -3,16 +3,14 @@ import {AppContext} from '../App.jsx';
 
 const Login = () => {
 
-    const {username,setUsername} = useContext(AppContext);
+    const {username,changeUser} = useContext(AppContext);
 
     return(
         <div>
             <input 
             value={username}
             type="text" 
-            onChange={(e)=>{
-                setUsername(e.target.value);
-            }}
+            onChange={changeUser}
             />
         </div>
     )

@@ -8,9 +8,13 @@ function App() {
 
   const [username,setUsername] = React.useState("");
 
+  const changeUser = (e)=> {
+    setUsername(e.target.value);
+  }
+
   return (
     <React.Fragment>
-      <AppContext.Provider value={{username, setUsername}}>
+      <AppContext.Provider value={{username, changeUser}}>
         <Login />
         <User />
       </AppContext.Provider>
