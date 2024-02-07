@@ -1,0 +1,60 @@
+import product1 from './assets/products/1.png';
+import product2 from './assets/products/2.png';
+import product3 from './assets/products/3.png';
+import product4 from './assets/products/4.png';
+import product5 from './assets/products/5.png';
+import product6 from './assets/products/6.webp';
+import product7 from './assets/products/7.webp';
+import product8 from './assets/products/8.webp';
+
+export const PRODUCTS = [
+    {
+        id: 0,
+        productName: "IPhone",
+        price: 999.00,
+        productImage: product1 
+    },
+    {
+        id: 1,
+        productName: "Macbook Pro 2022 (M1)",
+        price: 1999.00,
+        productImage: product2
+    },
+    {
+        id: 2,
+        productName: "Cannon M50 Camera",
+        price: 699.00,
+        productImage: product3 
+    },
+    {
+        id: 3,
+        productName: "WLS Van Gogh Denim Jacket",
+        price: 228.00,
+        productImage: product4 
+    },
+    {
+        id: 4,
+        productName: "LED Light Strips",
+        price: 19.99,
+        productImage: product5 
+    },
+    {
+        id: 5,
+        productName: "SPECTRUM LS TEE",
+        price: 68.00,
+        productImage: product6 
+    },
+    {
+        id: 6,
+        productName: "AUTO SERVICE SHIRT by GOLF WANG",
+        price: 120.00,
+        productImage: product7 
+    },
+    {
+        id: 7,
+        productName: "DON'T TRIP UNSTRUCTURED HAT",
+        price: 120.00,
+        productImage: product8 
+    },
+    
+]
