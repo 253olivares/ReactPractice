@@ -1,3 +1,4 @@
+// text animate css that makes our letter bounce in 
 .text-animate {
     display: inline-block;
     opacity: 0;
@@ -11,11 +12,19 @@
     display: inline-block;
     animation-fill-mode: both;
     &:hover{
+        // hover animation that replaces our previous animation 
+        // now our letter will rubberband when we hover over and replace the css 
         animation: rubberBand 1s;
         color: #ffd700;
     }
 }
 
+// here we further modify our animation delay for our text animate by creating a for loop thats adds a .1 second to each letter 
+// we set our letters delay through the class that starts with _ 
+
+// while the cap is 35 we can increase the number to include letters and strings that are higher
+// right now our starting point is _15
+// which equates to 1.5 seconds delay and then ad
 @for $i from 1 through 35 {
     .text-animate._#{$i} {
         animation-delay: #{calc($i/10)}s;

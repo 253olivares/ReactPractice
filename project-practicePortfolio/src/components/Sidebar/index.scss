@@ -1,3 +1,8 @@
+// our nav bar css 
+// we set our nav bar to the left and have it display always on the left when the user is on the site only ever
+//  changing when the user is using a screen resolution less than 1200px
+
+
 .nav-bar {
     background-color: #181818;
     width: 60px;
@@ -41,7 +46,7 @@
             i{
                 transition: all 0.3 ease-out;
             }
-
+            // this fades our svg and shows our page name if the user wants to go there
             &:hover{
                 color: #ffd700;
                 svg{
@@ -56,12 +61,14 @@
                 font-size: 9px;
                 letter-spacing: 2px;
                 position: absolute;
-                bottom: 0;
+                top: 25%;
                 display: block;
                 width: 100%;
                 text-align: center;
                 opacity: 0;
                 transition: all 0.3s ease-out;
+                line-height: 22px;
+                word-break: break-all;
             }
 
             &:first-child{

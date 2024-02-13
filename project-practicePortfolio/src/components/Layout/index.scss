@@ -1,3 +1,5 @@
+// our css files for layout
+// this css sets up our basic structures for our website
 .page{
     width: 100%;
     height: 100%;
@@ -34,6 +36,8 @@
     margin: 0 auto;
     z-index: 1;
     transform-style: preserve-3d;
+    // this is our animation that plays when our pages load 
+    // we tell it to wait a second and then display our page
     animation: fadeIn 1s forwards;
     animation-delay: 1s;
 }
@@ -80,7 +84,11 @@
         font-family: sans-serif;
         font-weight: 300;
         max-width: fit-content;
+        // animation pulse for our paragraph content
+        // it will pulsate our paragraphs when they load
         animation: pulse 1s;
+        // add a delay one after another for a total of 3 
+        // if we have more paragraphs we want to pulsate we have to add theme here as 4 5 and so on
         &:nth-of-type(1) {
           animation-delay: 1.1s;
         }

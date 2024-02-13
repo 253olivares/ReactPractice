@@ -1,8 +1,8 @@
-# React + Vite
+# React practice portfolio site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a react site that I created to practice site building. Nearing the end of my react journey I am at a stage where I feel comfortable with a lot of the react idealogies and fundamentals. I created this site following this guide.
 
-Currently, two official plugins are available:
+https://www.youtube.com/watch?v=bmpI252DmiI&t=2914s
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Using a lot of features and practices leaned here I plan on creating my own react portfolio but not copying what was done here.
+Recreating project like these I find are the best way to learn to code and understand how code functions.

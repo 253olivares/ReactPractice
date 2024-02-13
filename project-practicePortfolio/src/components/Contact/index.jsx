@@ -1,24 +1,37 @@
+// importing our loaders
 import Loader from 'react-loaders';
+// our contact css 
 import './index.scss'
+// import our animated letters component
 import AnimatedLetters from '../AnimatedLetters';
 import React from 'react';
+// email js currently doesnt work since I didnt set up an account and only wnt to play with the form
 import emailjs from '@emailjs/browser'
+// react leaflet used for our map on contact
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
+// contact component
 const Contact = () => {
 
+    // letterClass state
     const [letterClass, setLetterClass] = React.useState('text-animate');
 
+    // react ref on refForm
     const refForm = React.useRef();
 
+    // React use effect doing the same as we did previously 
+    // it would prob be beneficial to set up a hoc but due to inexperience I am opting to just copy paste the code where needed
     React.useEffect(()=> {
         return () => setTimeout(()=> {
             setLetterClass('text-animate-hover')
         }, 3000)
     },[])
 
+    // sendemail function the the form will fun when it detects that it has been submitted
     const sendEmail = (e) => {
+        // prevent page reload
         e.preventDefault();
+        // emailjs 
         emailjs
             .sendForm(
                 'gmail',
@@ -39,10 +52,12 @@ const Contact = () => {
 
 
     return(
+        // react fragment to hold all our content and inject it into our layout
         <React.Fragment>
             <div className='container contact-page'>
                 <div className='text-zone'>
                     <h1>
+                        {/* animated letters takes in string array and a starting delay 1.5s */}
                         <AnimatedLetters 
                         letterClass={letterClass}
                             strArray={["C","o","n","t","a","c","t", " ","m","e"]}
@@ -50,8 +65,10 @@ const Contact = () => {
                         />
                     </h1>
                     <p>
+                        {/* p description will run pulse animation when loaded */}
                         I am interested in freelance opportunities - especially ambitious or large projects. However, if you have other request or question, don't hesitate to contact me using below form either.
                     </p>
+                    {/* our form that using a ref we trie a reference to in react  */}
                     <div className='contact-form'>
                         <form ref={refForm} onSubmit={(e)=>sendEmail(e)}>
                             <ul>
@@ -74,6 +91,7 @@ const Contact = () => {
                         </form>
                     </div>
                 </div>
+                {/* info map div */}
                 <div className='info-map'>
                     Slobodan Gajic,
                     <br />
@@ -85,6 +103,10 @@ const Contact = () => {
                     <br />
                     <span>freelancerslobodan@gmail.com</span>
                 </div>
+                {/* our map that using leaflet we set up a map container and tile layer that brings up our map
+                // we create a marker and give is coordinate to start with */}
+                {/* would have to do more research on leaflet I am not currently familiar with what all the components do
+                just aware this is more versatile then using html built in function iframe */}
                 <div className='map-wrap'>
                     <MapContainer center={[44.96366, 19.61045]} zoom={13} > 
                         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

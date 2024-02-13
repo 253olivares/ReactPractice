@@ -1,3 +1,7 @@
+// app scss sets up some basic global variables that will be utilized throughout the whole application. We set them here as opposed to index css
+// so that we can utilize scss specific features. Everything and below will be compiled later during run time and automatically transfer to css 
+// when we run our application in dev mode or run build
+
 $primary-color: #ffd700;
 
 @import 'animate.css';

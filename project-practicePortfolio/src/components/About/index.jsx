@@ -1,13 +1,19 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import AnimatedLetters from '../AnimatedLetters';
 import React from 'react';
+// Our about style
 import './index.scss'
 import { faAngular, faCss3, faGitAlt, faHtml5, faJsSquare, faReact } from '@fortawesome/free-brands-svg-icons';
+// Our loader component
 import Loader from 'react-loaders';
 
-const About = () => {
 
+// our about component
+const About = () => {   
+    // same letter class state from our home that will fulfill our our desired animation from home
     const [letterClass, setLetterClass] = React.useState('text-animate');
+    
+    // use effect that changes our text animate into a hover animation
 
     React.useEffect(()=> {
         return ()=> setTimeout(()=> {
@@ -15,17 +21,21 @@ const About = () => {
         }, 3000);
     })
 
+    // return component html
     return (
         <>
             <div className='container about-page'>
                 <div className='text-zone'>
+                    {/* our header page title */}
                     <h1>
+                        {/* animated letter components that takes in our string and our delay we want to start at*/}
                         <AnimatedLetters 
                         letterClass={letterClass}
                             strArray={["A", "b", "o", "u", "t"," ", "m", "e"]}
                             idx={15}
                         />
                     </h1>
+                    {/* p tags that will play with pulse animation when we load the page */}
                     <p>
                         I'm a very ambitious front-end developer looking for a role in an
                         established IT company with the opportunity to work with the latest
@@ -41,7 +51,12 @@ const About = () => {
                         photography enthusiast, and tech-obsessed!!!
                     </p>
                 </div>
+                {/* cube container that will plage a cube animation on the right with the programming languages we understand */}
                 <div className='stage-cube-cont'>
+                    {/* we create 6 divs that will be the faces of our cubes
+                    we load our icons in each with the color we want 
+                    then we transform our faces in css by giving them unique xyz cordinates to create a cube in a 3d space that we will then spin
+                     */}
                     <div className='cubespinner'>
                         <div className='face1'>
                             <FontAwesomeIcon icon={faAngular} color='#DD0031' />
