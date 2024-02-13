@@ -1,8 +1,14 @@
-# React + Vite
+# React Lazy practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React practice module to study react lazy.
 
-Currently, two official plugins are available:
+What is Lazy Loading?
+Designing pattern to optimize web application by loading essential components and features first and then supplementary (Non Critical) material second
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ELEMENTS ARE LOADED ON DEMAND!
+
+Components that will be used to apply code splitting and lazy loading:
+
+react.lazy() (react function that lets render dynamic import as a regular component)
+
+react.suspense (specify loading indicator)
