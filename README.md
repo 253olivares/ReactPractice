@@ -12,6 +12,15 @@ Now back I have begun studying Vue js and React js. This repository will be dedi
 
 The primary sources I utilize to learn React are React documentation on the official page and several React YouTube videos. Some of which I will provide below. Document by document I will record my sources for each module when I can. 
 
+[Official React Website](https://react.dev/ "Official React Website")
+
+[PedroTech Videos](https://www.youtube.com/watch?v=LlvBzyy-558 "PedroTech Videos")
+
+[Bro Code React JS](https://www.youtube.com/watch?v=CgkZ7MvWUAA&t=2s "Bro Code React JS")
+
+[React JS Tutorial - Basic to Advance (2023)](https://www.youtube.com/watch?v=cd3P3yXyx30 "React JS Tutorial - Basic to Advance (2023)")
+
+By far the best method I have found to learn any coding languages to by utilizing online resources and following allong tutorials. Seeing the coding transform and your code and change it does wonders for learning. 
 
 ## File Structure
 
