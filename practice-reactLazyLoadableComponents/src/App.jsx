@@ -5,11 +5,17 @@ import Layout from './component/Layout'
 
 import { ErrorBoundary } from 'react-error-boundary';
 import ErrorFallback from './component/ErrorFallback';
+// import changes to loadable from loadable component
+import loadable from '@loadable/component'
 
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import SkeletonAdmin from './component/Skeletons/SkeletonAdmin';
 
 const Admin = React.lazy(()=> import('./component/Admin'));
+
+// This time I am using loadable a bit different and loading my fallback as a prop 
+const LoaderAdminComponent = loadable(() => import('./component/Admin'),{
+})
 
 function App() {
   
@@ -23,9 +29,8 @@ function App() {
             <Route path='admin' element={
               <ErrorBoundary FallbackComponent={ErrorFallback}
                 onReset = {()=> navigate('/') }>
-                <React.Suspense fallback={<SkeletonAdmin />}>
-                  <Admin />
-                </React.Suspense>
+                  {/* calling my fallback using a prop instead of of an object */}
+                  <LoaderAdminComponent fallback={<SkeletonAdmin />}/>
               </ErrorBoundary>
             }></Route>
           </Route>

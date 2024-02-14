@@ -10,3 +10,5 @@ Lazy loading was create by the react team to handle client side render ad thus c
 Instead of lazy we are going to utilize Loadable Components:
 
 https://github.com/gregberge/loadable-components
+
+A very flexible alternate to lazy. Only reason to use lazy over Loadable is due to react developer support and the application will not use server side rendering.
