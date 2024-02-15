@@ -1,5 +1,7 @@
+/* import font */
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
+/* set up our body providing a background color */
 body {
   font-family: 'Nunito', sans-serif;
   font-size: 1.5rem;
@@ -7,10 +9,13 @@ body {
   color: #18181B;
 }
 
+/* input text inherit our body style */
+
 input[type="text"], button {
   font: inherit;
 }
 
+/* style our main tag which is our wrapping tag for our todo list */
 main {
   margin: auto;
   max-width: 600px;
@@ -20,11 +25,14 @@ main {
   box-shadow: 2px 2px 5px #333;
 }
 
+/* h1 styling */
 h1 {
   margin: 0.5rem 0;
 }
 
-form, article {
+/* provide some styles for our form and article tags */
+
+article {
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -33,18 +41,21 @@ form, article {
   border: 1px solid #18181B;
 }
 
+/* style our individual todo components */
 .todo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
+/* styling for our checkbox */
 input[type="checkbox"] {
   min-width: 30px;
   min-height: 30px;
   margin-right: 1rem;
 }
 
+/* basic button styling */
 button {
   min-width: 50px;
   min-height: 50px;
@@ -53,15 +64,18 @@ button {
   cursor: pointer;
 }
 
+/* styling for our trash icon */
 .trash {
   background-color: #F8FAFC;
   color: #EF4444;
 }
 
+/* additional styling that changes the trash icon color when we hover */
 .trash:focus, .trash:hover {
   filter:brightness(120%)
 }
 
+/* form styling will overwrite previous styling */
 form {
   padding: 1rem;
   display: flex;
@@ -71,28 +85,33 @@ form {
   margin-bottom: 1rem;
 }
 
+/* form labels styling */
 form label {
   position: absolute;
   left: -10000px;
 }
 
+/* new todo box styling */
 .new-todo {
   width: 100%;
   padding-right: 30px;
 }
 
+/* input text stlying */
 input[type="text"] {
   width: 100%;
   padding: 0.5rem;
   border-radius: 10px;
   border: 0.5px solid #18181B;
 }
+/* submit button styling */
 
 .submit {
   background-color: #F8FAFC;
   color: gray;
 }
 
+/* submit icon styling */
 .submit:focus, .submit:hover {
   background-color: limegreen;
   color: #F8FAFC;
