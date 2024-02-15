@@ -15,3 +15,8 @@ SWR Source: https://swr.vercel.app/
 I will begin by replicating a todo list provided in the video above and transfer it over to utilize swr. Main objective is to transfer this current todo app to utilize a new react hook (SWR) for data fetching.
 
 Code not copied to avoid just copying code without learning anything.
+
+_Application requires json server to run to function_
+
+NPM Code to run json Server:
+`npx json-server -w data/db.json -p 2500`

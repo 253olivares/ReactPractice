@@ -1,3 +1,11 @@
 # React useMemo Practice
 
-useMemo is a React function that is used to help prevent repeat data from repeating when its not needed for example sorting data when it hasnt been changes. In larger projects this can create performance issues where the function is running code that sorts data when teh data hasnt changed. useMemo lets us prevent these functions from running when our data hasnt change by setting it as a dependency.
+React useMemo is react hook that helps prevent data from repeating. This is done by cache results to prevent calculations between re-renders
+
+On smaller projects this may not be necessary but on large scale projects this a very valuable resource to save on performance.
+
+usMemo is called at the very top of the function and you can set a dependency so it recalculates only when it has determined the data has changed.
+
+React Documentation can be see below:
+
+[React useMemo Documentation.](https://react.dev/reference/react/useMemo "React useMemo Documentation.")

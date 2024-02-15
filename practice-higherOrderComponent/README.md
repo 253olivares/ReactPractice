@@ -1,26 +1,14 @@
-# React High Order Component
+# React High Order Component Practice
 
-Often time in react there is a need to cut reuse code for performance and readability. Sometimes there will be repeat components that use the same states and functions with the only difference being data source and and data itself.
+High Order Component Component (HOC) is a advance react coding technique that allows us to cute reuse code saving us on performance and readability.
 
-HOCs allow us to create a function that creates new components based on previous preexisting components. THe idea being dynamic components that allow us to change data states functions and sources through props.
+Ideal use cases for this situation are those where repeat components use the same state and functions where the only difference is data source or date.
 
-ex:
+EX: Data Endpoints and servers
 
-$ const Component = (wrappedComponent, data) => {
-$ return(props)=> {
-$ const [data, setData] = useState([]);
-$
-$ useEffect(()=> {
-$ const handleChange = () => {
-$ const newData = data(DataSource, props);
-$ setData(newData);
-$ }
-$ DataSource.addListener(handleChange);
-$ return () => {
-$ DataSource.removeListener(handleChange);
-$ }
-$ }, []);
-$ return <WrappedComponent data={data} {...props} />
-$ }
+Using HOC we create a function that creates a new component based on pre existing components.
 
-}
+Creating a dynamic component we change the data states and sources through props.
+
+HOC Documentation:
+[https://legacy.reactjs.org/docs/higher-order-components.html](https://legacy.reactjs.org/docs/higher-order-components.html)
