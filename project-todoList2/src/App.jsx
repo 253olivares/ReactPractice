@@ -8,6 +8,7 @@ import Tasks from "./components/Tasks"
 import AddTask from './components/AddTask'
 import Footer from './components/Footer'
 import About from './components/About'
+import TaskDetails from "./components/TaskDetails"
 import {TodoContext} from './provider/TodoProvider'
 
 // Main Todo App jsx file where we will compile all our components and features
@@ -35,12 +36,9 @@ function App() {
         <Routes>
 
           {/* When our url has / after the base url direction we will display thi fragment */}
-          <Route 
-          path="/"
-          element = {
+          <Route path="/" element = {
             // Our react fragment that holds our content for what we want our route to display when our url points to the home page
             // home page being just "/"
-
             <React.Fragment>
               {/* Toggle turnery that will display our add task component when toggle is true.
               Every time our toggle state changes the page rerenders and it will render the add task based on this bool */}
@@ -51,7 +49,8 @@ function App() {
               Turnery inside a turnery*/}
               {tasks.length > 0 ? <Tasks/> : connecting ? "No Tasks To Show": "Trying to connect..." }
             </React.Fragment>
-          } />
+            } 
+          />
           
           {/* When our url displays /about we will display our about component */}
           <Route path='/about' element={<About />} />
@@ -60,6 +59,8 @@ function App() {
           So when our url has a / and that it it will display our content we want for our home page
           when it is /about it will display its about component
           */}
+
+          <Route path="/task/:id" element={<TaskDetails />}/>
         </Routes>
         <Footer />
       </div>

@@ -84,7 +84,7 @@ export const TodoProvider = ({children}) => {
       setConnecting(true);
       if(localStorage.getItem(key)){
         // if local storage exists with our key then we grab data
-        const data = JSON.parse(localStorage.getItem(key))
+        const data = await JSON.parse(localStorage.getItem(key))
         console.log("Information from fetchtask when server not found and data is fetched from localstorage:", data);
         return data;
       } else {
@@ -199,11 +199,12 @@ export const TodoProvider = ({children}) => {
     // changes our toggle state to show and not show add table
     setToggle(!toggle);
   }
+
+  const providerValues = {connectedToServer,toggle,tasks,connecting,fetchTasks,addTask,changeReminder,deleteTask,changeToggle}
+
     // our context provider where we put in all our states and functions we want to run throughout our applications
-    return <TodoContext.Provider value={{
-        connectedToServer,toggle,tasks,connecting,
-        fetchTasks,addTask,changeReminder,deleteTask,changeToggle
-    }} 
-        >{children}</TodoContext.Provider>
+    return <TodoContext.Provider value={providerValues} >
+      {children}
+      </TodoContext.Provider>
 }
 

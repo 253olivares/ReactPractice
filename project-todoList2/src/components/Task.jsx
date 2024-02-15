@@ -1,4 +1,5 @@
 import {FaTimes} from 'react-icons/fa'
+import { Link } from 'react-router-dom';
 // importing react icons
 
 import {TodoContext} from '../provider/TodoProvider'
@@ -20,6 +21,7 @@ const Task = ({task}) => {
             <h3>{task.text} <FaTimes style={{color: 'red', cursor:'pointer'}} onClick={()=>deleteTask(task.id)} /></h3>
             {/* Display our day in our p tag */}
             <p>{task.day}</p>
+            <p><Link to={`/task/${task.id}`}>View Details</Link></p>
         </div>
     )
 }
