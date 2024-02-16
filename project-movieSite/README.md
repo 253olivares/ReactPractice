@@ -1,8 +1,7 @@
-# React + Vite
+# React movie site application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a react module follow along with the resource of Javascript Mastery.
 
-Currently, two official plugins are available:
+For this module we are creating a movie site in react. For our data we utilize an api server omdb databse. This returns a large category of movies and information attached to those movies. Every time data changes in our search movie input field we run a function that sends our input to the api and return any results if any our found. If they are we display that data using map sending each movie data in our movie card component.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[https://www.youtube.com/watch?v=b9eMGE7QtTk](https://www.youtube.com/watch?v=b9eMGE7QtTk)

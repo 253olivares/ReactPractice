@@ -1,6 +1,8 @@
 # React Update Functions
 
-React module to help get accustomed to using updater functions instead of just using setState function. It better to use update functions as react waits till the end of its cycle to run set functions. Using an update functions ensure that the state is updated at the time the set function is called vs updating state at the the app remounts new values.
+React updater function is a coding practice that is utilize to push changes at the time of code execution instead of end of compiling.
+
+This is mostly importing when using states. When calling our state functions reacts run these codes during the life cycle at remount to calculate new values. The issues presented during this is that react does not run each set state as a separate instance but just once.
 
 ex:
 count = 0
@@ -20,3 +22,6 @@ setCount(count => count + 1);
 setCount(count => count + 1);
 
 count = 3
+
+React Documentation:
+[https://react.dev/learn/queueing-a-series-of-state-updates](https://react.dev/learn/queueing-a-series-of-state-updates)

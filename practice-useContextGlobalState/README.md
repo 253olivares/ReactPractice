@@ -1,7 +1,8 @@
 # React UseContext Global State
 
-This practice is the same as our useContext practice only difference for this one we are focused on using useContext and turning it into a global state. There are alot of benefits from creating global states vs initializing then within their component.
+In this module I practice setting us globals states using useContext. useContext allows us to create state files that control our applications back end processes. Utilizing global states processes allows us to store and modify data without needing to prop drill.
 
-First being the fact that global states dont require the use of prop drilling to move data down a dom tree. We can just fetch where needed by calling the required documents.
+In smaller projects this may not be a issues but on larger scale projects it is beneficial to store all our api functions in one folder instead of multiple folder between multiple components
 
-Easier to locate and manage. In larger projects where we have hundreds of files it can get hard to manage where states are.
+React Documentation:
+[https://react.dev/reference/react/useContext](https://react.dev/reference/react/useContext)
