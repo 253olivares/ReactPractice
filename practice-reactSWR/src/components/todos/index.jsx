@@ -7,12 +7,18 @@ import React from 'react';
 import useSWR from 'swr';
 // importing our api keys from our api file
 import {
-    getTodos,
     addTodo,
+    getTodos,
     updateTodo,
     deleteTodo,
     todosUrlEndpoint as cacheKey,
 } from '../../api';
+
+import {
+    addTodoOptions,
+    updateTodoOptions,
+    deleteTodoOptions
+} from '../../helpers/todosMutations'
 
 const TodoList =() => {
 
@@ -24,17 +30,24 @@ const TodoList =() => {
         isLoading,
         error,
         data: todos,
-        mutate
+        mutate,
     } = useSWR(cacheKey, getTodos, {
-        onSuccess: data => data.sort((a,b) => a.id - b.id)
+        onSuccess: data => data.sort((a, b) => b.id - a.id)
     }) ;
+    // onsuccess is run every time mutate is called
 
     // addTodo Mutation function that takes in our new todo and runs our add todo function that appends it to our json server
     const addTodoMutation = async (newTodo) => {
         try {
-           
-            await addTodo(newTodo);
-            mutate()
+            // mutate tells swr that our previous data is invalid and we need to revalidate again
+                // This is only when mutation is called by itself()
+            // With this set up we are passing a function to validate data as our first object and then our second object is a function that changes
+            // our mutation settings we want to utilize
+            await mutate(
+                addTodo(newTodo),
+                // mutate options passing data 
+                addTodoOptions(newTodo),
+            )
             // API and Mutation Here
             
             // toaster notification gives us a success message if we dont encounter any issues
@@ -54,8 +67,10 @@ const TodoList =() => {
     const updateTodoMutation = async (updatedTodo)=> {
         try{
             // we call our update todo function and passing our param of the new updated todo
-            await updateTodo(updatedTodo)
-            mutate()
+            await mutate(
+                updateTodo(updatedTodo),
+                updateTodoOptions(updatedTodo),
+            )
             // API & Mutation Here
 
             // success message
@@ -74,8 +89,11 @@ const TodoList =() => {
     const deleteTodoMutation = async ({id}) => {
         try {
             // delete todo function that we are calling from our api file
-            await deleteTodo({id});
-            mutate()
+            
+            await mutate(
+                deleteTodo({id}),
+                deleteTodoOptions({id}),
+            )
             
             // success toaster notification
             toast.error("Success! Deleted item.",{
