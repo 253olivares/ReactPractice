@@ -1,6 +1,11 @@
 import React from 'react'
 import useSWR from 'swr'
 
+// this is our post list component list here we take our user id state that is returned from our parent component the request specific data
+// that is tied to that id
+
+// importing our getPostByUserId from post api file
+// postsUrlEndpoint is going to be our key for swr
 import {
   getPostsByUserId,
   postsUrlEndpoint as postsCacheKey
@@ -13,51 +18,44 @@ import {
 } from '../../api/UsersApi'
 
 import Post from '../Post';
-import SkeletonPost from '../Skeletons/SkeletonPost'
 
 const PostList = ({currentUserId}) => {
 
+  // we can get rid of isloading and error now since we are relying on react 
+  // suspense and error boundaries to handle our loading and errors
   const {
-    isLoading,
-    error,
     data:posts
   } = useSWR(
     [postsCacheKey, currentUserId],
-    ([url,userId]) => getPostsByUserId(url,userId)
+    ([url,userId]) => getPostsByUserId(url,userId),
+    // enable suspense in swr
+    { suspense: true }
   )
 
   const {
-    isLoading: isLoadingUser,
-    error: userError,
     data:user
   } = useSWR(
+   
     posts?.length ? [usersCacheKey, currentUserId] : null,
-    ([url,userId]) => getUsersById(url,userId)
+    ([url,userId]) => getUsersById(url,userId),
+    // enable suspense in swr
+    { suspense: true }
   )
 
-    let content
-    if(currentUserId === 0) {
-      content = <p className='loading'>Select an Employee to view posts</p>
-    } else if  (isLoading || isLoadingUser) {
-      content = (
-        [...Array(10).keys()].map(i=> {
-          return <SkeletonPost key={i}/>
-        })
-      )
-    } else if (error || userError) {
-      content = <p>{error.message || userError.message}</p>
-    } else {
-      content = (
-        <main>
-          {
-            posts.map(post => {
-              return <Post key={post.id} post={post} user={user}/>
-            })
-          }
-        </main>
-      )
-    }
+  // We will only be on this page if we have our content data so we dont need to worry
+  // about a long turnery checking the state of swr
+  const content = (
+      <main>
+        {
+          posts.map(post => {
+            // set key as post id | post is post data | user is userData
+            return <Post key={post.id} post={post} user={user}/>
+          })
+        }
+      </main>
+    )
     
+    // display our content
 
   return content
 }

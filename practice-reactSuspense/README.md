@@ -1,13 +1,9 @@
-# React Skeleton Loading Component Practice
+# React Suspense Component
 
-For this module I am practicing using skeleton loading components. Thi is not necessarily a practice of any react hooks or modules but mostly a study of a specific loading method utilized on several websites. This method is very nice and largely helps improve the user experience.
+For this module I will be taking the application created for the skeleton component module and transferring it over to utilize react suspense. Our previous application utilizes SWR built in features to handing loading and error handling. This method however is reliant on conditional statements abd causes our code to become overly complicated and difficult to read.
 
-For this module well be following Dave Grays guide.
+For this reason we are reformating our application to short and make our application more legible.
 
-[https://www.youtube.com/watch?v=cNQTg920Nx0&t=1s](https://www.youtube.com/watch?v=cNQTg920Nx0&t=1s)
+Tutorial utilized for this test provided below.
 
-I will be recreating the application we are going to use which is a fetch application acme blog site that grabs user post history when selected from the drop down. The application also grabs user information both of which are stored in two separate objects in our json file.
-
-Before running the application it requires the utilization of json server. To run the module it requires the following line to be ran first to begin the server.
-
-`npx json-server -w data/db.json -p 3500`
+[https://www.youtube.com/watch?v=1_dLaSjzOMY&t=878s](https://www.youtube.com/watch?v=1_dLaSjzOMY&t=878s)

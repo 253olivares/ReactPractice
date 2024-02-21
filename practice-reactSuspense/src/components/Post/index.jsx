@@ -1,7 +1,11 @@
 import React from 'react'
 
+// our each individual post component that takes in post and user props
 const Post = ({post, user}) => {
+  
+  if (user.id === "2") throw new Error("2 does not exist");
   return (
+    // return an card that is styled in css and given all that data passed from props
     <article className='post'>
       <h2>{post.title}</h2>
       <p>{post.body}</p>
