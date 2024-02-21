@@ -1,0 +1,44 @@
+/* color for our skeleton component */
+/* basic set up */
+.skeleton {
+    background-color: rgb(199,199,199);
+    margin: 0.75rem 0;
+    border-radius: 0.25rem;
+}
+
+.skeleton.title {
+    height: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+/* make our text skeleton 75% of font height */
+.skeleton.text {
+    height: 0.75rem;
+}
+
+/* this is for whenever our skeleton is 100% width */
+.skeleton.width-100 {
+    width: 100%;
+}
+/* skeleton for half length of width */
+.skeleton.width-50 {
+    width: 50%;
+}
+
+
+.skeleton.profile-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+/* this is our pulse animation that will play when our skeleton component loads */
+@keyframes pulse {
+    50%{
+        opacity: .5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite;
+}
