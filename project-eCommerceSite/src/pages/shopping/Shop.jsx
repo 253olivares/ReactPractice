@@ -6,9 +6,31 @@ import {PRODUCTS} from '../../products.js';
 import Product from './Product.jsx';
 // import our css
 import './shop.css';
+import { ShopContext } from "../../context/ShopContext.jsx";
 
 // our shopping component that is being called in app jsx whenever our url is https://root.com/ then we will render and our dom below.
 const Shop = () =>{
+
+    const {elementRefTest,controller,} = React.useContext(ShopContext);
+
+    React.useEffect(()=> {
+      controller.current = new AbortController();
+      const signal = controller.current.signal;
+        console.log("useEffect has ran!")
+      window.addEventListener("keyup", (e)=>{
+          console.log(e.keyCode);
+          console.log("test");
+          console.log(elementRefTest);
+      } ,{signal})
+  
+      return  ()=> {
+          if(controller.current) {
+            console.log("Event listener aborted!");
+              controller.current.abort();
+          }
+      }
+  }, [])
+
     return(
         // Shopping div
         <div className="shop">
@@ -24,7 +46,7 @@ const Shop = () =>{
                 // Data passes our individual object for that component
                 // Key takes our index *just a requirement for react 
                 // keyLocation take our index location and is primarily created since its not recommended to use our key prop 
-                <Product key={index} keyLocation={index} data={product} />
+                (<Product key={index} keyLocation={index} data={product} />)
                 )}
             </div>
         </div>  

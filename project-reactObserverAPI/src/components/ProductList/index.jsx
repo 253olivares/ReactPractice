@@ -78,25 +78,28 @@ const ProductList = () => {
             }
         }
         // we will run his use effect again every time when our products change so we 
-        // create a new observer instance
-        // we need to do this as our dom products are rerendering every time we add more data to it. 
-    }, [products]);
+        // create a new observer instance we need to do this to make sure our observer is staying dynamic and updating
+        // code as our state changes
+    },[products]);
 
     async function fetchMoreItems() {
         //fetch the new batch of products
         //api to use https://dummyjson.com/products
 
-        // every time we run our fetchMoreItems function we run the following code to fetch data from our api
-        try{
-            // create a signal by calling our controller signal
-            // this is how the controller api keeps track of which async functions are running
-            const signal = controller.signal;
+
+            // // create a signal by calling our controller signal
+            // // this is how the controller api keeps track of which async functions are running
+            // const signal = controller.signal;
             // we run our fetch and pass our signal
-            const response = await fetch(`https://dummyjson.com/products?limit=10&skip=${page*10}&delay=1000`,{signal})
+            // const response = await fetch(`https://dummyjson.com/products?limit=10&skip=${page*10}&delay=1000`,{signal})
+
+            const response = await fetch(`https://dummyjson.com/products?limit=10&skip=${page*10}&delay=1000`)
             // we get our data by json parsing our data
             const data = await response.json();
             console.log(data);
             console.log(data.products);
+
+
 
             // if our data products length is 0 who data was returned
             // then we set our hasMore state to false
@@ -111,10 +114,6 @@ const ProductList = () => {
             }
             console.log("fetchMoreItems",products)
             console.log("fetchMoreItems",page)
-        } catch (error) {
-            // catch lets us know if we have any errors
-        console.log("Fetch has run into some error:",error);
-        } 
     }
 
   return (

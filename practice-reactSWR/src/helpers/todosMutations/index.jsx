@@ -86,7 +86,7 @@ export const deleteTodoOptions = ({id}) => {
 
             console.log("deleteTodoOptions(populateCache ! emptyResponseObj)", emptyResponseObj);
 
-            console.log("deleteTodoOptions(populateCache ! todo)", todo);
+            console.log("deleteTodoOptions(populateCache ! todo)", todos);
 
             return todos.filter(todo => {
                 return todo.id !== id

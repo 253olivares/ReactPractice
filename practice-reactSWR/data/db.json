@@ -2,38 +2,14 @@
   "todos": [
     {
       "userId": 1,
-      "id": "2",
-      "title": "quis ut nam facilis et officia qui",
-      "completed": true
-    },
-    {
-      "userId": 1,
-      "id": "4",
-      "title": "et porro tempora",
-      "completed": true
-    },
-    {
-      "userId": 1,
       "id": "6",
       "title": "qui ullam ratione quibsdam voluptatem quia omis",
       "completed": false
     },
     {
       "userId": 1,
-      "id": "8",
-      "title": "quo adipisci enim quam ut ab",
-      "completed": true
-    },
-    {
-      "userId": 1,
       "id": "9",
       "title": "illo est ratione doloremque quia mairos aut",
-      "completed": false
-    },
-    {
-      "id": "e2b2",
-      "userId": 1,
-      "title": "test",
       "completed": false
     }
   ]

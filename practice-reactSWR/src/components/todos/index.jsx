@@ -30,9 +30,12 @@ const TodoList =() => {
         isLoading,
         error,
         data: todos,
-        mutate,
+        // when mutating if we are dealing with multiple swr instance we need to make a unique mutation name to go along side our data
+        // swr makes sure to pass our data along so we dont have to in our mutation page but we need to make sure our names state consistant
+        // so swr knows what data to access.
+        mutate:newMutate,
     } = useSWR(cacheKey, getTodos, {
-        onSuccess: data => data.sort((a, b) => b.id - a.id)
+        onSuccess: data => data.sort((a, b)=> b.id - a.id)
     }) ;
     // onsuccess is run every time mutate is called
 
@@ -43,7 +46,7 @@ const TodoList =() => {
                 // This is only when mutation is called by itself()
             // With this set up we are passing a function to validate data as our first object and then our second object is a function that changes
             // our mutation settings we want to utilize
-            await mutate(
+            await newMutate(
                 addTodo(newTodo),
                 // mutate options passing data 
                 addTodoOptions(newTodo),
@@ -67,7 +70,7 @@ const TodoList =() => {
     const updateTodoMutation = async (updatedTodo)=> {
         try{
             // we call our update todo function and passing our param of the new updated todo
-            await mutate(
+            await newMutate(
                 updateTodo(updatedTodo),
                 updateTodoOptions(updatedTodo),
             )
@@ -90,7 +93,7 @@ const TodoList =() => {
         try {
             // delete todo function that we are calling from our api file
             
-            await mutate(
+            await newMutate(
                 deleteTodo({id}),
                 deleteTodoOptions({id}),
             )
@@ -101,6 +104,7 @@ const TodoList =() => {
             })
         }catch (err) {
             // Failure toaster notification
+            console.log(err);
             toast.error("Failed to delete the item.", {
                 duration:1000,
             })

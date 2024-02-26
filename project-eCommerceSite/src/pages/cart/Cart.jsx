@@ -7,6 +7,7 @@ import {ShopContext} from '../../context/ShopContext'
 import CartItem from './CartItem';
 // React router dom library hook that allows us to know what our browser router is currently set too
 import { useNavigate } from "react-router-dom";
+import './cart.css'
 
 // This is our cart page
 // When the url directs to https://root.com/cart
@@ -30,13 +31,13 @@ const Cart = () =>{
             {
                 getTotalCartAmount() > 0 ? 
                 <React.Fragment>
-                <div className="cartItems">
+                <div className="cart">
                     {
                     // maps through our products and if its value in the cart is greater than 0 then we render that item in our cart using the cart item to pass
                     // our data
                     PRODUCTS.map((product,index)=>{
                         if(cartItems[product.id] !== 0){
-                            return <CartItem key={index} keyLocation={index} data={product} />
+                            return (<CartItem key={index} keyLocation={index} data={product} />)
                         }
                     })
                     }

@@ -43,6 +43,7 @@ const ShopContextProvider = ({children}) =>{
     // withut this is runs our get defult function again when its not needed
     const getCart= React.useMemo(()=>  getDefaultCart(),[PRODUCTS])
 
+
     // Creating our cart items state that will keep track of our apps cart
     // We useState and then pass our getDefaultCart function tha returns our cart object that is used to set our state
     // with our state created we now keep track of our cart but updating the id quantity by one or removing one 
@@ -101,10 +102,15 @@ const ShopContextProvider = ({children}) =>{
             setCartItems((prev)=> ({...prev, [id]:newAmount}))
         } 
     }
+    // to get multiple objects
+
+    const elementRefTest = React.useRef([]);
+    const controller = React.useRef();
+
 
     // Storing all our states and functions in a object array called contextValue that im then going to use to pass as our value in provider
     // this allows us to use these states and functions where we need to use it in our program
-    const contextValue = {cartItems,addToCart,removeFromCart,updateCartItemCount,getTotalCartAmount,resetCart}
+    const contextValue = {cartItems,elementRefTest,controller,addToCart,removeFromCart,updateCartItemCount,getTotalCartAmount,resetCart}
 
     // console log that I use to check and see what my current state is just more debugging
     console.log("My current state object array:",cartItems)

@@ -14,6 +14,7 @@ import Shop from './pages/shopping/Shop';
 import Cart from './pages/cart/Cart';
 // importing our shop context provider
 import ShopContextProvider from './context/ShopContext'
+import { ShopContext } from './context/ShopContext';
 // app css that covers the entire application that is gathered in app jsx to be compiled.
 import './App.css';
 

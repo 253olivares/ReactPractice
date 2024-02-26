@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: orange; 
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+html,body::-webkit-scrollbar {
+  /* display: none; */
+}
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  margin: auto;
+  width: 50%;
+  min-width: 500px;
+  height: auto;
+  text-align: center;
+}
+.App h2 {
+  font-size: 40px;
+  color: white;
+  margin-bottom: 20px;
+}
+.TodoListContainer{
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.DeleteButton p {
+  text-align: center;
+  color: white;
+  background-color: lightseagreen;
+  border-radius: 5px;
+  padding: 15px;
+  width: 60%;
+  margin: auto;
+  font-size: 20px;
+  transition: all .8s ease-in-out;
+}
+
+.DeleteButton p:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.selected p {
+  background: white !important;
+  color: black;
+}
+
+.TodoItemContainer p  {
+  text-align: center;
+  color: white;
+  background: greenyellow;
+  border-radius: 5px;
+  padding: 15px;
+  width: 60%;
+  margin: auto;
+  font-size: 20px;
+  transition: all .8s ease-in-out;
+}
+
+.TodoItemContainer p:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
