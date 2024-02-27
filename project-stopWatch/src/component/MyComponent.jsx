@@ -10,6 +10,7 @@ function MyComponent () {
 
     // create a ref for interval this will be used to keep track of elapsed time. 
     const intervalIdRef = useRef(null);
+    
     // Start time ref that keeps track our 0
     const startTimeRef = useRef(0);
     // use effect that will run every time our component is rerendered due to isRunning state
