@@ -1,0 +1,19 @@
+html{
+  font-family: sans-serif;
+}
+
+body {
+  scrollbar-width: thin;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  height: 12px;
+  width: 5px;
+  background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5f5f5f;
+}
