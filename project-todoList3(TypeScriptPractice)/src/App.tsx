@@ -62,20 +62,29 @@
 // }
 
 // these are basics of type scripts
+// Our main app
+// will be a bit message since we are housing our reducer on the main app page instead of a separate state manager lik redux or context
 import React from "react"
+// import input field
 import InputField from "./components/InputField";
+// Todo list component
 import TodoList from "./components/TodoList";
+// our css
 import './App.css'
 
+// import our type interface for our reducer action and reducer state from model
 import {TodoActions, TodoInterface} from "./model";
+// import drag ad drop features from react beautiful dnd
 import { DragDropContext, DropResult} from "react-beautiful-dnd";
 
+// this is our state type interface
 type TodoStateType = {
   todo: string,
   todos: TodoInterface[],
   completedTodos: TodoInterface[]
 }
 
+// our reducer that houses all our state mutations
 const TodoReducer = (state:TodoStateType, action:TodoActions) => {
   switch(action.type) {
     case "add":
@@ -115,17 +124,26 @@ const TodoReducer = (state:TodoStateType, action:TodoActions) => {
   }
 }
 
+// our main react app component
 const App:React.FC = () => {
   // const [todo,setTodo] = React.useState<string>("");
   // const [todos, setTodos] = React.useState<TodoInterface[]>([]);
 
+  // create our reducer set our state and a dispatch function that will be used to update our state
+  // our dispatch takes in a type and action with type being the function we want to run and action being 
+  // the data being passed
+  
+  // we pass our todo reducer which houses our switch logic that checks to see with functions we want to run to modify the state
+  // then pass an array of our state that we will be managing in our reducer
   const [state, dispatch] = React.useReducer(TodoReducer,{todo:"", todos:[], completedTodos:[]});
 
   // const [completedTodos,setCompletedTodos] = React.useState<TodoInterface[]>([]);
 
+  // HandleAdd function that is responsible to create a new todo 
   const handleAdd = () => {
-  
+    // of state todo exists 
     if(state.todo) {
+      // run our dispatch passing our type and then a payload of what we want changed in our todo. In this case append it to the end
       dispatch({type:"add",payload:state.todo})
       dispatch({type:"newSet",payload:""})
     }
@@ -133,6 +151,7 @@ const App:React.FC = () => {
   
   // console.log(todo);
 
+  // on Drag function that will trigger when dnd experiences that end of a users dragging and dropping a dom
   const onDragEnd = (result:DropResult) => {
     const { destination, source } = result;
     if (!destination) {
@@ -174,10 +193,19 @@ const App:React.FC = () => {
   }
 
   return (
+    // we create a drag and drop context
     <DragDropContext onDragEnd={onDragEnd}>
+      {/* inside we place our application any time it detects this happening it triggers the function within */}
         <div className="app">
+          {/* name of todo */}
           <span className="heading">Taskify</span>
+          {/* input field that takes our todo state that keeps track of the new todo we are adding
+          passes our dispatch that lets us run our function to set our todo in our input field
+          we pass our handle add function so we can trigger it in our child component */}
           <InputField todo={state.todo} setTodo={dispatch} handleAdd={handleAdd}></InputField>
+          {/* our todo list component that takes our todos state that keeps track of our list
+          our set todos passes our dispatch function
+          // completed todos passes another todo state that keeps track of each todo array so we can drag and drop between both and show our update */}
           <TodoList todos={state.todos} setTodos={dispatch}
           completedTodos = {state.completedTodos}
           // setCompletedTodos = {dispatch}
