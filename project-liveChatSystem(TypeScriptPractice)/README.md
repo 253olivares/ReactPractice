@@ -1,30 +1,8 @@
-# React + TypeScript + Vite
+# React Live Chat System Practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+For this react module we are practicing creating a live chat using react typescript and socket.
 
-Currently, two official plugins are available:
+Tutorial followed for this practice:
+https://www.youtube.com/watch?v=0gLr-pBIPhI&list=WL&index=58&t=479s
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+The practice is done in js I plan on translating it to typescript myself. After which I plan on creating a youtube chat replicate using practices learned within this project.
