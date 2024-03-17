@@ -17,18 +17,10 @@ export const addTodoOptions = (newTodo) => {
     return {
         optimisticData: (todos) =>{
 
-            console.log("addTodoOptions(optimisticData ! todos): ",todos);
-
-            console.log("addTodoOptions(optimisticData ! newTodo): ",newTodo);
-
             return [...todos, newTodo].sort((a, b)=> b.id - a.id);
         },
         rollbackOnError: true,
         populateCache:(added,todos) => {
-
-            console.log("addTodoOptions( populateCache ! added):",added);
-
-            console.log("addTodoOptions( populateCache ! todos):",todos);
 
             return [...todos, added].sort((a, b)=> b.id - a.id);
         },
@@ -43,12 +35,6 @@ export const updateTodoOptions = (updatedTodo) => {
                 return todo.id != updatedTodo.id
             })
 
-            console.log("updateTodoOptions(optimisticData ! prevTodo)", prevTodo);
-
-            console.log("updateTodoOptions(optimisticData ! updatedTodo)", updatedTodo);
-
-            console.log("updateTodoOptions(optimisticData ! todos)", todos);
-
             return [...prevTodo, updatedTodo].sort((a, b)=> b.id - a.id);
         },
         rollbackOnError: true,
@@ -56,12 +42,6 @@ export const updateTodoOptions = (updatedTodo) => {
             const prevTodos = todos.filter(todo=> {
                 return todo.id !== updatedTodo.id
             })
-
-            console.log("updateTodoOptions(populateCache ! prevTodos)", prevTodos);
-
-            console.log("updateTodoOptions(populateCache ! updated)", updated);
-
-            console.log("updateTodoOptions(populateCache ! todos)", todos);
 
             return [...prevTodos, updated].sort((a, b)=> b.id - a.id)
         },
@@ -73,20 +53,12 @@ export const deleteTodoOptions = ({id}) => {
     return {
         optimisticData: (s) => {
 
-            console.log("deleteTodoOptions(optimisticData ! id)", id);
-
-            console.log("deleteTodoOptions(optimisticData ! todos)", s);
-
             return s.filter(todo => {
                 return todo.id !== id
             })
         },
         rollbackOnError: true,
         populateCache: (emptyResponseObj, todos) => {
-
-            console.log("deleteTodoOptions(populateCache ! emptyResponseObj)", emptyResponseObj);
-
-            console.log("deleteTodoOptions(populateCache ! todo)", todos);
 
             return todos.filter(todo => {
                 return todo.id !== id
