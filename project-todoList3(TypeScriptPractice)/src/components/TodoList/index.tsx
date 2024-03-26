@@ -62,7 +62,6 @@ const TodoList: React.FC<TodoListInterface> = ({
                   // set out key as per rules of using map
                     index = {index}
                     todo={todo}
-                    todos={todos}
                     setTodos={setTodos}
                     key={todo.id}
                   />
@@ -87,7 +86,6 @@ const TodoList: React.FC<TodoListInterface> = ({
                   <SingleTodo 
                     index = {index}
                     todo={todo}
-                    todos={completedTodos}
                     setCompletedTodos={setTodos}
                     key={todo.id}
                   />

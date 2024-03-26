@@ -8,7 +8,6 @@ import { Draggable } from 'react-beautiful-dnd';
 type SingleTodoType = {
     index: number;
     todo: TodoInterface;
-    todos: TodoInterface[];
     // both of these functions that are recieved in our prop are set to be optional as our component is being used to display
     // bother todo tasks and completed tasks. only one or the other will pass so the app knows which this component is suppose to be.
     setTodos?: React.Dispatch<TodoActions>;
@@ -16,7 +15,7 @@ type SingleTodoType = {
 };
 
 // single todo component
-const SingleTodo = ({index,todo,todos,setTodos,setCompletedTodos}:SingleTodoType) => {
+const SingleTodo = ({index,todo,setTodos,setCompletedTodos}:SingleTodoType) => {
     // an edit state for when the user wants to edit the todo
     // if true then we display the edit jsx elements to allow the user to change the todo entry
     const [edit,setEdit] = React.useState<boolean>(false);
@@ -33,7 +32,7 @@ const SingleTodo = ({index,todo,todos,setTodos,setCompletedTodos}:SingleTodoType
     },[edit]);
 
     // handle edit function
-    const handleEdit =( id:number):void => {
+    const handleEdit = (id:number):void => {
         // setTodos(todos.map(todo => 
         //     todo.id === id ? {...todo,todo:editTodo} : todo
         // ))
