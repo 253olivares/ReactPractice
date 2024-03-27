@@ -198,7 +198,7 @@ const App:React.FC = () => {
       {/* inside we place our application any time it detects this happening it triggers the function within */}
         <div className="app">
           {/* name of todo */}
-          <span className="heading">Taskify</span>
+          <span className="heading">Drag & Drop Task List</span>
           {/* input field that takes our todo state that keeps track of the new todo we are adding
           passes our dispatch that lets us run our function to set our todo in our input field
           we pass our handle add function so we can trigger it in our child component */}
